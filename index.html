@@ -8,9 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Banco UARO ;)</h1>
-        <h2>Simulador de Crédito Personal</h2>
-        
+        <h1>Simulador de Crédito Personal</h1>
         <form id="credit-form">
             <label for="monto">Monto del Crédito Solicitado ($):</label>
             <input type="number" id="monto" value="150000" required>
@@ -26,27 +24,28 @@
                 <option value="48" selected>48 meses</option>
             </select>
 
-            <!-- Botón requerido por el script.js de la Fase 3 -->
-            <button type="button" id="btn-calcular">Calcular Simulación</button>
+            <!-- Botón de cálculo -->
+            <button type="button" id="btn-calcular">Calcular Amortización</button>
         </form>
 
-        <!-- Tabla requerida por el script.js de la Fase 3 -->
+        <!-- Tabla para inyectar los resultados de JavaScript -->
         <table id="tabla-amortizacion">
             <thead>
                 <tr>
-                    <th>Periodo</th>
+                    <th>Período</th>
+                    <th>Pago Mensual</th>
                     <th>Interés</th>
                     <th>IVA</th>
-                    <th>Pago Mensual Total</th>
+                    <th>Capital</th>
                 </tr>
             </thead>
             <tbody>
-                <!-- Aquí se inyectarán los resultados con JavaScript -->
+                <!-- Los resultados aparecerán aquí -->
             </tbody>
         </table>
     </div>
 
-    <!-- Enlace al archivo de lógica funcional -->
+    <!-- Enlace al archivo de lógica financiera -->
     <script src="script.js"></script>
 </body>
 </html>
