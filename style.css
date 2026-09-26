@@ -15,8 +15,17 @@ body {
     padding: 40px;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    /* Línea roja en la parte superior clásica de tarjetas bancarias */
     border-top: 6px solid #ec0000; 
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.logo {
+    max-width: 200px;
+    height: auto;
 }
 
 h1 {
@@ -32,13 +41,24 @@ form {
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     margin-bottom: 30px;
-    align-items: center;
+}
+
+.form-group-full {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
 }
 
 label {
     font-weight: bold;
     color: #444444;
     font-size: 14px;
+    margin-bottom: 8px;
 }
 
 input, select {
@@ -57,7 +77,6 @@ input:focus, select:focus {
     box-shadow: 0 0 0 2px rgba(236, 0, 0, 0.1);
 }
 
-/* Estilos para el botón de cálculo (estilo píldora de Santander) */
 #btn-calcular {
     grid-column: 1 / -1;
     background-color: #ec0000;
@@ -76,11 +95,14 @@ input:focus, select:focus {
     background-color: #cc0000;
 }
 
-/* Estilos para la tabla generada en JS */
+.table-responsive {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
     background-color: #ffffff;
 }
 
@@ -95,7 +117,7 @@ th {
     color: #444444;
     font-weight: bold;
     font-size: 14px;
-    border-bottom: 2px solid #ec0000; /* Subrayado rojo en la cabecera */
+    border-bottom: 2px solid #ec0000;
 }
 
 tr:hover {
