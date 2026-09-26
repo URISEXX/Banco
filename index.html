@@ -3,49 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plataforma de Simulación de Crédito</title>
+    <title>Plataforma de Simulación de Crédito - Santander</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
+        <!-- Logo de Santander -->
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo Santander" class="logo">
+        </div>
+        
         <h1>Simulador de Crédito Personal</h1>
+        
         <form id="credit-form">
-            <label for="monto">Monto del Crédito Solicitado ($):</label>
-            <input type="number" id="monto" value="150000" required>
-            
-            <label for="tasa">Tasa de Interés Anual Ordinaria (%):</label>
-            <input type="number" id="tasa" value="34" step="0.1" required>
-            
-            <label for="plazo">Plazo del Financiamiento (Meses):</label>
-            <select id="plazo">
-                <option value="12">12 meses</option>
-                <option value="24">24 meses</option>
-                <option value="36">36 meses</option>
-                <option value="48" selected>48 meses</option>
-            </select>
+            <!-- Campo de Nombre ocupando todo el ancho -->
+            <div class="form-group-full">
+                <label for="nombre">Nombre del Solicitante:</label>
+                <input type="text" id="nombre" placeholder="Ej. Uriel Ramos" required>
+            </div>
 
-            <!-- Botón de cálculo -->
+            <!-- Inputs numéricos originales -->
+            <div class="form-group">
+                <label for="monto">Monto del Crédito Solicitado ($):</label>
+                <input type="number" id="monto" value="150000" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="tasa">Tasa de Interés Anual Ordinaria (%):</label>
+                <input type="number" id="tasa" value="34" step="0.1" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="plazo">Plazo del Financiamiento (Meses):</label>
+                <select id="plazo">
+                    <option value="12">12 meses</option>
+                    <option value="24">24 meses</option>
+                    <option value="36">36 meses</option>
+                    <option value="48" selected>48 meses</option>
+                </select>
+            </div>
+
             <button type="button" id="btn-calcular">Calcular Amortización</button>
         </form>
 
-        <!-- Tabla para inyectar los resultados de JavaScript -->
-        <table id="tabla-amortizacion">
-            <thead>
-                <tr>
-                    <th>Período</th>
-                    <th>Pago Mensual</th>
-                    <th>Interés</th>
-                    <th>IVA</th>
-                    <th>Capital</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Los resultados aparecerán aquí -->
-            </tbody>
-        </table>
+        <h3 id="resultado-titulo" style="display: none; text-align: center; color: #ec0000; margin-top: 25px;"></h3>
+
+        <div class="table-responsive">
+            <table id="tabla-amortizacion">
+                <thead>
+                    <tr>
+                        <th>Mes</th>
+                        <th>Saldo Inicial</th>
+                        <th>Capital</th>
+                        <th>Interés</th>
+                        <th>IVA (16%)</th>
+                        <th>Pago Total</th>
+                        <th>Saldo Final</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Resultados inyectados por JavaScript -->
+                </tbody>
+            </table>
+        </div>
     </div>
 
-    <!-- Enlace al archivo de lógica financiera -->
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
